@@ -3,16 +3,6 @@ body {
   margin: 0;
 }
 
-header {
-  background-image: linear-gradient(blue, aquamarine);
-  padding: 25px;
-}
-
-#textLogo {
-  color: white;
-  margin: 0;
-}
-
 .welcomeMsg {
   text-align: center;
 }

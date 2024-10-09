@@ -1,9 +1,10 @@
 body {
   background-color: white;
+  margin: 0;
 }
 
-h1,
-h2 {
+#name,
+#msg {
   text-align: center;
 }
 

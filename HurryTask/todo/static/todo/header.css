@@ -1,0 +1,9 @@
+header {
+    background-image: linear-gradient(blue, aquamarine);
+    padding: 25px;
+}
+
+#textLogo {
+    color: white;
+    margin: 0;
+}

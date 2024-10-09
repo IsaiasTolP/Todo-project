@@ -1,8 +1,7 @@
 {% extends "todo/base.html" %}
+{% load static %}
+{% block css %}<link rel="stylesheet" href="{% static 'todo/custom.css' %}">{% endblock css %}
 {% block body %}
-<header>
-  <h1 id="textLogo">HURRY TASK</h1>
-</header>
 <div class="welcomeMsg">
   <h1>Welcome To HurryTask</h1>
   <h2>Your trusted task manager</h2>

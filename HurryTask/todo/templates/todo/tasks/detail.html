@@ -1,15 +1,10 @@
+{% extends "todo/base.html" %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{ task.name }}</title>
-  <link rel="stylesheet" href="{% static 'todo/detail.css' %}">
-</head>
-<body>
-  <h1>HurryTask</h1>
-  <h2>Now, showing your task in detail</h2>
+{% block title %}{{ task.name }}{% endblock title %}
+{% block css %}<link rel="stylesheet" href="{% static 'todo/detail.css' %}">{% endblock css %}
+{% block body %}
+  <h1 id="name">HurryTask</h1>
+  <h2 id="msg">Now, showing your task in detail</h2>
   <div id="main">
     <div id="taskContainer">
       <h2 id="taskName">This is your task: {{ task.name }}</h2>
@@ -25,6 +20,4 @@
       <p id="goBack"><a href="{% url 'todo:home' %}">Go back</a></p>
     </div>
   </div>
-  
-</body>
-</html>
+{% endblock body %}
