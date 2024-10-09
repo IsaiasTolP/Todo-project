@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ task.name }}</title>
+  <link rel="stylesheet" href="{% static 'todo/detail.css' %}">
+</head>
+<body>
+  <h1>HurryTask</h1>
+  <h2>Now, showing your task in detail</h2>
+  <div id="main">
+    <div id="taskContainer">
+      <h2 id="taskName">This is your task: {{ task.name }}</h2>
+      <p id="description">{{ task.content }}</p>
+      <p>Your limit date is: {{ task.date_limit }}</p>
+      <p>
+        {% if task.done %}
+          Congrats, You have done your task! Keep it going! 🎉🥳
+        {% else %}
+          A kindly reminder that you have not done your task 😔
+        {% endif %}
+      </p>
+      <p id="goBack"><a href="{% url 'todo:home' %}">Go back</a></p>
+    </div>
+  </div>
+  
+</body>
+</html>

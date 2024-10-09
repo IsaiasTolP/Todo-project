@@ -1,0 +1,25 @@
+{% extends "todo/base.html" %}
+{% block body %}
+<div class="welcomeMsg">
+  <h1>Welcome To HurryTask</h1>
+  <h2>Your trusted task manager</h2>
+</div>
+<div id="tasksData">
+  <p>Currently you have {{ num_tasks }} tasks!</p>
+</div>
+  
+  <div id="tasksContainer">
+  {% for task in tasks %}
+  <div class="myTask" onclick="location.href='{% url 'todo:task_detail' task.slug %}'">
+      <h3 class="taskName">{{ task.name }}</h3>
+      <p class="status">
+        {% if task.done %}
+          Hecho ✅
+        {% else %}
+          No hecho ❌
+        {% endif %}
+      </p>
+      <p class="limitDate">Fecha limite: {{ task.date_limit }}
+    </div>
+  {% endfor %}
+{% endblock body %}
