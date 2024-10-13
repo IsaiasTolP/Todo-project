@@ -1,5 +1,5 @@
 body {
-  background-color: azure;
+  background-color: white;
   margin: 0;
 }
 
@@ -24,24 +24,23 @@ h1 {
   align-content: center;
 }
 
+#tasksContainer div {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  flex-direction: column;
+  width: 50%;
+}
+
 .myTask {
   background-color: white;
   border: 1px solid black;
   border-radius: 10px;
-  width: 50%;
-  padding: 10px;
+  min-width: 70%;
   margin: 10px;
   cursor: pointer;
 }
 
 .taskName {
-  margin: 0;
-}
-
-.status {
-  margin: 10px;
-}
-
-.limitDate {
-  margin: 0;
+  margin-bottom: 0;
 }

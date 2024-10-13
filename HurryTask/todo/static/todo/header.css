@@ -1,9 +1,35 @@
 header {
-    background-image: linear-gradient(blue, aquamarine);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #131921;
     padding: 25px;
 }
 
 #textLogo {
     color: white;
     margin: 0;
+    margin-left: 5%;
 }
+
+#nav {
+    width: 20%;
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:visited {
+    color: white;
+}
+
+a:hover {
+    color: gray;
+}
+
+span {
+    color: white;
+}
+
