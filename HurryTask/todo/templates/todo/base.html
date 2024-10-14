@@ -13,9 +13,12 @@
 </head>
 <body>
   <header>
-    <h1 id="textLogo">HURRY TASK</h1>
+    <div id="logoContainer">
+      <img id="logo" src="{% static 'todo/assets/logoHurryTask.jpg' %}">
+      <h1 id="textLogo">HURRY TASK</h1>
+    </div>
     <div>
-      <h1 id="proverb">時は人を待たず / Time waits for no one</h1>
+      <h1 id="proverb">時は人を待たず<span id="subtitle">Time waits for no one</span></h1>
     </div>
     <div id="nav">
       <span><a id="home" href="{% url 'todo:home' %}">Home</a></span>

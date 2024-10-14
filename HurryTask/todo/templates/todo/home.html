@@ -19,7 +19,7 @@
       {% for task in not_done_tasks %}
       <div class="myTask" onclick="location.href='{% url 'todo:task_detail' task.slug %}'">
         <h3 class="taskName">{{ task.name }}</h3>
-        <p class="limitDate">Deadline: {{ task.date_limit }}
+        <span class="date">Deadline: {{ task.date_limit }}</span>
       </div>
       {% endfor %}
     </div>
@@ -34,7 +34,7 @@
       {% for task in done_tasks %}
       <div class="myTask" onclick="location.href='{% url 'todo:task_detail' task.slug %}'">
         <h3 class="taskName">{{ task.name }}</h3>
-        <p class="limitDate">Deadline: {{ task.date_limit }}
+        <span class="date">Deadline: {{ task.date_limit }}</span>
     </div>
       {% endfor %}
   </div>

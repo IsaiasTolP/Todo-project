@@ -5,8 +5,11 @@ main {
 
 #welcomeMsg {
   text-align: center;
-  font-style: italic;
   margin: 30px;
+}
+
+#welcomeMsg h1 {
+  font-weight: 500;
 }
 
 #tasksContainer {
@@ -26,7 +29,7 @@ main {
   width: 50%;
   border-radius: 1em;
   padding: 10px;
-  margin: 10px;
+  margin: 20px;
 }
 
 #doneTasks {
@@ -44,16 +47,26 @@ main {
   border: 1px solid black;
   border-radius: 10px;
   min-width: 70%;
+  padding: 20px;
   margin: 10px;
   cursor: pointer;
   transition: transform 500ms, box-shadow 500ms;
 }
 
 .myTask:hover {
-  box-shadow: 5px 5px 5px 2px;
+  box-shadow: 5px 5px 20px -5px;
   transform: scale(1.1);
 }
 
 .taskName {
-  margin-bottom: 0;
+  margin-bottom: 20px;
+  margin-top: 0;
+  font-weight: 500;
+}
+
+.date {
+  background-color: #FFE0B2;
+  padding: 0.2rem 0.5rem;
+  border-radius: 5px;
+  font-weight: bold;
 }
