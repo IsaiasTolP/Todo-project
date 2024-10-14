@@ -1,3 +1,8 @@
+body {
+    margin: 0;
+    background-color: #ECEFF1;
+}
+
 header {
     display: flex;
     justify-content: space-between;
@@ -7,9 +12,17 @@ header {
 }
 
 #textLogo {
+    font-family: "Baloo Paaji 2", sans-serif;
     color: white;
     margin: 0;
     margin-left: 5%;
+}
+
+#proverb {
+    font-family: "Noto Serif JP", serif;
+    font-weight: 400;
+    color: white;
+    margin: 0;
 }
 
 #nav {
@@ -17,19 +30,15 @@ header {
     text-align: center;
 }
 
-a {
+#home {
     text-decoration: none;
 }
 
-a:visited {
+a#home:hover {
+    color: rgb(171, 171, 171);
+    transition: color 250ms;
+}
+
+#home:visited {
     color: white;
 }
-
-a:hover {
-    color: gray;
-}
-
-span {
-    color: white;
-}
-

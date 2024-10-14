@@ -2,13 +2,10 @@
 {% load static %}
 {% block css %}<link rel="stylesheet" href="{% static 'todo/custom.css' %}">{% endblock css %}
 {% block body %}
-<div class="welcomeMsg">
-  <h1>Welcome To HurryTask</h1>
-  <h2>Your trusted task manager</h2>
-</div>
-<div id="tasksData">
-  <p>Currently you have {{ num_tasks }} tasks!</p>
-</div>
+<main>
+  <div id="welcomeMsg">
+    <h1>Welcome to HurryTask, Currently you have ➡ {{ num_tasks }} task{{ num_tasks|pluralize }}!</h1>
+  </div>
   
   <div id="tasksContainer">
     <div id="notDoneTasks">
@@ -22,7 +19,7 @@
       {% for task in not_done_tasks %}
       <div class="myTask" onclick="location.href='{% url 'todo:task_detail' task.slug %}'">
         <h3 class="taskName">{{ task.name }}</h3>
-        <p class="limitDate">Fecha limite: {{ task.date_limit }}
+        <p class="limitDate">Deadline: {{ task.date_limit }}
       </div>
       {% endfor %}
     </div>
@@ -36,9 +33,10 @@
       {% endif %}
       {% for task in done_tasks %}
       <div class="myTask" onclick="location.href='{% url 'todo:task_detail' task.slug %}'">
-      <h3 class="taskName">{{ task.name }}</h3>
-      <p class="limitDate">Fecha limite: {{ task.date_limit }}
-      </div>
-      {% endfor %}
+        <h3 class="taskName">{{ task.name }}</h3>
+        <p class="limitDate">Deadline: {{ task.date_limit }}
     </div>
+      {% endfor %}
+  </div>
+</main>
 {% endblock body %}

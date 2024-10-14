@@ -3,11 +3,10 @@
 {% block title %}{{ task.name }}{% endblock title %}
 {% block css %}<link rel="stylesheet" href="{% static 'todo/detail.css' %}">{% endblock css %}
 {% block body %}
-  <h1 id="name">HurryTask</h1>
-  <h2 id="msg">Now, showing your task in detail</h2>
   <div id="main">
+    <h2 id="msg">Now, showing your task in detail</h2>
     <div id="taskContainer">
-      <h2 id="taskName">This is your task: {{ task.name }}</h2>
+      <h2 id="taskName">{{ task.name }}</h2>
       <p id="description">{{ task.content }}</p>
       <p>Your limit date is: {{ task.date_limit }}</p>
       <p>

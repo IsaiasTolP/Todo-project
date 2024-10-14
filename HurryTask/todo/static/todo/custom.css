@@ -1,18 +1,12 @@
-body {
-  background-color: white;
+main {
   margin: 0;
+  font-family: "Noto Sans", sans-serif;
 }
 
-.welcomeMsg {
+#welcomeMsg {
   text-align: center;
-}
-
-h1 {
-  font-family: sans-serif;
-}
-
-#tasksData {
-  text-align: center;
+  font-style: italic;
+  margin: 30px;
 }
 
 #tasksContainer {
@@ -24,12 +18,25 @@ h1 {
   align-content: center;
 }
 
-#tasksContainer div {
+#notDoneTasks, #doneTasks {
   display: flex;
   flex-wrap: wrap;
   align-content: center;
   flex-direction: column;
   width: 50%;
+  border-radius: 1em;
+  padding: 10px;
+  margin: 10px;
+}
+
+#doneTasks {
+  background-color: #C5E1A5;
+  border: 2px solid #A5D6A7;
+}
+
+#notDoneTasks {
+  background-color: #F5B7B1;
+  border: 2px solid #F28B82;
 }
 
 .myTask {
@@ -39,6 +46,12 @@ h1 {
   min-width: 70%;
   margin: 10px;
   cursor: pointer;
+  transition: transform 500ms, box-shadow 500ms;
+}
+
+.myTask:hover {
+  box-shadow: 5px 5px 5px 2px;
+  transform: scale(1.1);
 }
 
 .taskName {

@@ -7,12 +7,18 @@
   <title>{% block title %}HurryTask{% endblock title %}</title>
   <link rel="stylesheet" href="{% static "todo/header.css" %}">
   {% block css %}{% endblock css %}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+Paaji+2:wght@400..800&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Noto+Serif+JP&display=swap" rel="stylesheet">
 </head>
 <body>
   <header>
     <h1 id="textLogo">HURRY TASK</h1>
+    <div>
+      <h1 id="proverb">時は人を待たず / Time waits for no one</h1>
+    </div>
     <div id="nav">
-      <span><a href="{% url 'todo:home' %}">Home</a></span>
+      <span><a id="home" href="{% url 'todo:home' %}">Home</a></span>
     </div>
   </header>
   {% block body %}
