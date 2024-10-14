@@ -4,12 +4,12 @@
 {% block css %}<link rel="stylesheet" href="{% static 'todo/detail.css' %}">{% endblock css %}
 {% block body %}
   <div id="main">
-    <h2 id="msg">Now, showing your task in detail</h2>
+    <h1 id="msg">Now, showing your task in detail</h1>
     <div id="taskContainer">
       <h2 id="taskName">{{ task.name }}</h2>
       <p id="description">{{ task.content }}</p>
-      <p>Your limit date is: {{ task.date_limit }}</p>
-      <p>
+      <p id="date">Your current deadline is: {{ task.date_limit }}</p>
+      <p id="status">
         {% if task.done %}
           Congrats, You have done your task! Keep it going! 🎉🥳
         {% else %}
