@@ -50,19 +50,21 @@ header {
 }
 
 #nav {
+  display: flex;
+  justify-content: space-evenly;
   width: 25%;
   text-align: center;
 }
 
-#home {
+.navOption {
   text-decoration: none;
 }
 
-a#home:hover {
+a.navOption:hover {
   color: rgb(171, 171, 171);
   transition: color 250ms;
 }
 
-#home:visited {
+.navOption:visited {
   color: white;
 }

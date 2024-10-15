@@ -21,7 +21,8 @@
       <h1 id="proverb">時は人を待たず<span id="subtitle">Time waits for no one</span></h1>
     </div>
     <div id="nav">
-      <span><a id="home" href="{% url 'todo:home' %}">Home</a></span>
+      <span><a class="navOption" href="{% url 'todo:home' %}">Home</a></span>
+      <span><a class="navOption" href="{% url 'todo:create-task' %}">Task Creator</a></span>
     </div>
   </header>
   {% block body %}
