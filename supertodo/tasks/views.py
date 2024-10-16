@@ -3,7 +3,7 @@ from django.utils.text import slugify
 
 from tasks.models import Task
 
-from .forms import AddTaskForm
+from .forms import AddTaskForm, EditTaskForm
 
 
 def task_list(request):
@@ -46,12 +46,27 @@ def add_task(request):
 
 
 def toggle_task(request, task_slug):
-    pass
+    task = Task.objects.get(slug=task_slug)
+    task.done = not task.done
+    task.save()
+    return redirect('tasks:task-list')
 
 
 def edit_task(request, task_slug):
-    pass
+    task = Task.objects.get(slug=task_slug)
+    if request.method == 'POST':
+        if (form := EditTaskForm(request.POST)).is_valid():
+            form.id = task.id
+            task = form.save(commit=False)
+            task.slug = slugify(task.name)
+            task.save()
+            return redirect('tasks:task-list')
+    else:
+        form = EditTaskForm(initial=task.clean())
+    return render(request, 'tasks/add_task.html', dict(form=form))
 
 
 def delete_task(request, task_slug):
-    pass
+    task = Task.objects.get(slug=task_slug)
+    task.delete()
+    return redirect('tasks:task-list')
