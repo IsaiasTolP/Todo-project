@@ -1,0 +1,9 @@
+{% extends "tasks/base.html" %}
+{% load static %}
+{% block main %}
+<h1>Tareas: Titulo Aqui</h1>
+{% for task in tasks %}
+  <p>{{ task.name }}</p>
+  <p>{{ task.complete_before }}</p>
+{% endfor %}
+{% endblock main %}

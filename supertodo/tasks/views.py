@@ -55,14 +55,13 @@ def toggle_task(request, task_slug):
 def edit_task(request, task_slug):
     task = Task.objects.get(slug=task_slug)
     if request.method == 'POST':
-        if (form := EditTaskForm(request.POST)).is_valid():
-            form.id = task.id
+        if (form := EditTaskForm(request.POST, instance=task)).is_valid():
             task = form.save(commit=False)
             task.slug = slugify(task.name)
             task.save()
             return redirect('tasks:task-list')
     else:
-        form = EditTaskForm(initial=task.clean())
+        form = EditTaskForm(instance=task)
     return render(request, 'tasks/add_task.html', dict(form=form))
 
 

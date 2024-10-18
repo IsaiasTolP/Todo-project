@@ -1,0 +1,27 @@
+header {
+  background-color: red;
+}
+
+#textLogo {
+  font-family: "Baloo Paaji 2", sans-serif;
+  color: white;
+  margin: 0;
+}
+
+#proverb {
+  font-family: "Noto Serif JP", serif;
+  font-weight: 400;
+  font-size: 2rem;
+  color: white;
+  text-align: center;
+  margin: 0;
+}
+
+#subtitle {
+  display: block;
+  color: #bcbcbc;
+  margin-top: 0.2rem;
+  font-style: italic;
+  font-size: 1rem;
+  text-align: center;
+}
