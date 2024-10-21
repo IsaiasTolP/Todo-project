@@ -11,7 +11,11 @@ def task_list(request):
     return render(
         request,
         'tasks/taskList.html',
-        {'tasks': tasks, 'title': 'Now showing all your tasks'},
+        {
+            'tasks': tasks,
+            'title': 'Your tasks',
+            'no_tasks_msg': 'You do not have any task created',
+        },
     )
 
 
@@ -20,7 +24,11 @@ def done_tasks(request):
     return render(
         request,
         'tasks/taskList.html',
-        {'tasks': tasks, 'title': 'Now showing tasks you have already done'},
+        {
+            'tasks': tasks,
+            'title': 'Done tasks',
+            'no_tasks_msg': 'You have not done any task :(',
+        },
     )
 
 
@@ -29,7 +37,11 @@ def pending_tasks(request):
     return render(
         request,
         'tasks/taskList.html',
-        {'tasks': tasks, 'title': 'Now showing your pending tasks'},
+        {
+            'tasks': tasks,
+            'title': 'Pending tasks',
+            'no_tasks_msg': 'You do not have any task pending',
+        },
     )
 
 

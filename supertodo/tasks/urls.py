@@ -7,7 +7,7 @@ app_name = 'tasks'
 
 urlpatterns = [
     path('', lambda _: redirect('tasks:pending-tasks')),
-    path('', views.task_list, name='task-list'),
+    path('tasks/', views.task_list, name='task-list'),
     path('done/', views.done_tasks, name='done-tasks'),
     path('pending/', views.pending_tasks, name='pending-tasks'),
     path('task/add/', views.add_task, name='add-task'),
