@@ -1,0 +1,15 @@
+{% extends "tasks/base.html" %}
+{% load static %}
+{% block css %}
+  <link rel="stylesheet" href="{% static 'tasks/form.css' %}">
+{% endblock css %}
+{% block main %}
+<div id="formContainer">
+    <form method="post">
+    {% csrf_token %}
+    {{ form }}
+    <input id="submitBtn" type="submit" value="Save task">
+  </form>
+</div>
+{% endblock main %}
+

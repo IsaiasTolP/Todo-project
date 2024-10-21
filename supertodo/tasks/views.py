@@ -11,7 +11,7 @@ def task_list(request):
     return render(
         request,
         'tasks/taskList.html',
-        {'tasks': tasks},
+        {'tasks': tasks, 'title': 'Now showing all your tasks'},
     )
 
 
@@ -20,7 +20,7 @@ def done_tasks(request):
     return render(
         request,
         'tasks/taskList.html',
-        {'tasks': tasks},
+        {'tasks': tasks, 'title': 'Now showing tasks you have already done'},
     )
 
 
@@ -29,7 +29,7 @@ def pending_tasks(request):
     return render(
         request,
         'tasks/taskList.html',
-        {'tasks': tasks},
+        {'tasks': tasks, 'title': 'Now showing your pending tasks'},
     )
 
 
@@ -42,7 +42,7 @@ def add_task(request):
             return redirect('tasks:task-list')
     else:
         form = AddTaskForm()
-    return render(request, 'tasks/add_task.html', dict(form=form))
+    return render(request, 'tasks/task-form.html', dict(form=form))
 
 
 def toggle_task(request, task_slug):
@@ -62,7 +62,7 @@ def edit_task(request, task_slug):
             return redirect('tasks:task-list')
     else:
         form = EditTaskForm(instance=task)
-    return render(request, 'tasks/add_task.html', dict(form=form))
+    return render(request, 'tasks/task-form.html', dict(form=form))
 
 
 def delete_task(request, task_slug):

@@ -10,10 +10,11 @@ class AddTaskForm(forms.ModelForm):
         widgets = {
             'complete_before': forms.DateTimeInput(attrs={'type': 'datetime-local'}),
         }
+
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         for visible in self.visible_fields():
-            visible.field.widgets.attrs['class'] = 'form-control'
+            visible.field.widget.attrs['class'] = 'form-control'
 
 
 class EditTaskForm(forms.ModelForm):
@@ -23,7 +24,9 @@ class EditTaskForm(forms.ModelForm):
         widgets = {
             'complete_before': forms.DateTimeInput(attrs={'type': 'datetime-local'}),
         }
-        def __init__(self, *args, **kwargs):
-            super().__init__(*args, **kwargs)
-            for visible in self.visible_fields():
-                visible.field.widgets.attrs['class'] = 'form-control'
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        for visible in self.visible_fields():
+            visible.field.widget.attrs['class'] = 'form-control'
+        self.visible_fields()[-1].field.widget.attrs['class'] = 'form-check-input'

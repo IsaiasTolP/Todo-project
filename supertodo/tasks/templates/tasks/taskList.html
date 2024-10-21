@@ -1,9 +1,25 @@
 {% extends "tasks/base.html" %}
 {% load static %}
+{% block css %}
+  <link rel="stylesheet" href="{% static 'tasks/index.css' %}">
+{% endblock css %}
 {% block main %}
-<h1>Tareas: Titulo Aqui</h1>
-{% for task in tasks %}
-  <p>{{ task.name }}</p>
-  <p>{{ task.complete_before }}</p>
+<h1>{{ title }}</h1>
+<div id="taskContainer">
+  {% for task in tasks %}
+    <div class="task card w-50 mt-3">
+      <p>{{ task.name }}</p>
+      <div>
+        <a href="{% url 'tasks:toggle-task' task.slug %}">Cambiar estado</a>
+        <a href="{% url 'tasks:edit-task' task.slug %}">Edit task</a>
+        <a href="{% url 'tasks:delete-task' task.slug %}">Delete</a>
+      </div>
+      
+      <p>{{ task.complete_before }}</p>
+    </div>
+</div>
+
+    
+  
 {% endfor %}
 {% endblock main %}

@@ -1,0 +1,14 @@
+main {
+  display: flex;
+  justify-content: center;
+}
+
+#formContainer {
+  width: 60%;
+  padding: 25px;
+}
+
+form div,
+#submitBtn {
+  margin-top: 20px;
+}
