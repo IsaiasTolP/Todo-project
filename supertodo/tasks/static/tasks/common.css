@@ -39,3 +39,12 @@ header {
   width: 30%;
   text-align: center;
 }
+
+#nav a {
+  text-decoration: none;
+  color: white;
+}
+
+#nav a:hover {
+  color: rgb(189, 189, 189);
+}

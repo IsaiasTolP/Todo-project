@@ -4,15 +4,22 @@
   <link rel="stylesheet" href="{% static 'tasks/index.css' %}">
 {% endblock css %}
 {% block main %}
-<h1>{{ title }}</h1>
 <div id="taskContainer">
+  <h1>{{ title }}</h1>
   {% for task in tasks %}
     <div class="task card w-50 mt-3">
-      <p>{{ task.name }}</p>
+      <p>{{ task.name }}
+        {% if task.done %}
+        <i class="bi bi-check-circle-fill check"></i>
+        {% else %}
+        <i class="bi bi-x-circle-fill cross"></i>
+        {% endif %}
+      </p>
       <div>
-        <a href="{% url 'tasks:toggle-task' task.slug %}">Cambiar estado</a>
-        <a href="{% url 'tasks:edit-task' task.slug %}">Edit task</a>
-        <a href="{% url 'tasks:delete-task' task.slug %}">Delete</a>
+        <a href="{% url 'tasks:task-detail' task.slug %}">See details</a>
+        <a class="btn btn-success" href="{% url 'tasks:toggle-task' task.slug %}"><i class="bi bi-arrow-repeat"></i><span>Cambiar estado</span></a>
+        <a class="btn btn-info" href="{% url 'tasks:edit-task' task.slug %}"><i class="bi bi-pencil-square"></i><span>Edit task</span></a>
+        <a class="btn btn-danger" href="{% url 'tasks:delete-task' task.slug %}"><i class="bi bi-x-square"></i><span>Delete</span></a>
       </div>
       <p>{{ task.complete_before }}</p>
     </div>

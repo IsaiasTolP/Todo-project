@@ -1,0 +1,9 @@
+{% extends "tasks/base.html" %}
+{% load static %}
+{% block main %}
+<div>
+  <h3>{{ task.name }}</h3>
+  <p>{{ task.description }}</p>
+  <p>{{ task.complete_before}}</p>
+</div>
+{% endblock main %}

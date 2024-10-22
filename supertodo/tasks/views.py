@@ -45,6 +45,17 @@ def pending_tasks(request):
     )
 
 
+def task_detail(request, task_slug):
+    task = Task.objects.get(slug=task_slug)
+    return render(
+        request,
+        'tasks/detail.html',
+        {
+            'task': task,
+        },
+    )
+
+
 def add_task(request):
     if request.method == 'POST':
         if (form := AddTaskForm(request.POST)).is_valid():
