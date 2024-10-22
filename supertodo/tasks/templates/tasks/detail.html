@@ -1,7 +1,10 @@
 {% extends "tasks/base.html" %}
 {% load static %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'tasks/detail.css' %}">
+{% endblock css %}
 {% block main %}
-<div>
+<div id="task" class="container-xl card mt-3">
   <h3>{{ task.name }}</h3>
   <p>{{ task.description }}</p>
   <p>{{ task.complete_before}}</p>

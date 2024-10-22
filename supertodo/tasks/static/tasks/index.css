@@ -25,8 +25,13 @@ main {
   box-shadow: 5px 5px 7px 0px;
 }
 
-p {
+.task div {
   margin: 10px;
+  padding: 5px;
+}
+
+p {
+  margin: 0;
 }
 
 .btn span {
@@ -39,4 +44,10 @@ p {
 
 .check {
   color: green;
+}
+
+.deadline {
+  background-color: rgb(250, 199, 104);
+  padding: 5px;
+  border-radius: 10px;
 }

@@ -5,7 +5,7 @@
 {% endblock css %}
 {% block main %}
 <div id="formContainer">
-    <form method="post">
+    <form method="post" novalidate>
     {% csrf_token %}
     {{ form }}
     <input id="submitBtn" type="submit" value="Save task">
