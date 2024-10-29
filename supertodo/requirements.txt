@@ -1,2 +1,4 @@
-Django==5.1.2
-pytest-django==4.9.0
+django
+pytest-django
+model-bakery
+ipython
