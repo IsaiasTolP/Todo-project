@@ -2,3 +2,17 @@
   text-align: center;
   padding: 20px;
 }
+
+.check {
+  color: green;
+}
+
+.cross {
+  color: red;
+}
+
+#deadline {
+  background-color: rgb(250, 199, 104);
+  padding: 5px;
+  border-radius: 10px;
+}

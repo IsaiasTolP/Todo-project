@@ -27,7 +27,7 @@ def done_tasks(request):
         {
             'tasks': tasks,
             'title': 'Done tasks',
-            'no_tasks_msg': 'You have not done any task :(',
+            'no_tasks_msg': 'You have not done any task 🙁',
         },
     )
 

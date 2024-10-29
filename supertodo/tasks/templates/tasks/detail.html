@@ -4,9 +4,24 @@
 <link rel="stylesheet" href="{% static 'tasks/detail.css' %}">
 {% endblock css %}
 {% block main %}
-<div id="task" class="container-xl card mt-3">
+<div id="task" class="container-lg card mt-3">
   <h3>{{ task.name }}</h3>
   <p>{{ task.description }}</p>
-  <p>{{ task.complete_before}}</p>
+  <div>
+    <p>
+      {% if task.done %}
+      This task is done <i class="check bi bi-check-circle-fill check"></i>
+
+      {% else %}
+      This task is not done <i class="bi bi-x-circle-fill cross"></i>
+      {% endif %}
+    </p>
+  </div>
+  <p><span id="deadline">{{ task.complete_before }}</span></p>
+  <div>
+    <a class="btn btn-success border-success-subtle" href="{% url 'tasks:toggle-task' task.slug %}"><i class="bi bi-arrow-repeat"></i><span>Change status</span></a>
+    <a class="btn btn-info border-info-subtle" href="{% url 'tasks:edit-task' task.slug %}"><i class="bi bi-pencil-square"></i><span>Edit task</span></a>
+    <a class="btn btn-danger border-danger-subtle" href="{% url 'tasks:delete-task' task.slug %}"><i class="bi bi-x-square"></i><span>Delete</span></a>
+  </div>
 </div>
 {% endblock main %}

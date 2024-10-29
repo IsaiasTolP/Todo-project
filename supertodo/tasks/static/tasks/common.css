@@ -10,8 +10,14 @@ header {
   font-family: "Baloo Paaji 2", sans-serif;
   width: 25%;
   text-align: center;
-  color: white;
+
   margin: 0;
+  cursor: pointer;
+}
+
+#textLogo a {
+  text-decoration: none;
+  color: white;
 }
 
 #proverb {
