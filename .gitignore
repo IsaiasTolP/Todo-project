@@ -3,3 +3,4 @@ db.sqlite3
 .mypy_cache
 __pycache__
 justfile
+supertodo/supertodo
